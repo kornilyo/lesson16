@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>types</title>
+	</head>
+
+	<body>
+
+		<script>
+            
+           var gender  = 'female'; // String
+
+           console.log( typeof gender );
+
+           var isFemale = false; // Boolean
+            
+			var numTest = 45.324568; // number
+			var twoDecimalPoints = numTest.toFixed(2);
+			//var toExponential = numTest.toExponential(8);
+//
+			console.log(twoDecimalPoints);
+			//console.log(toExponential);
+
+			var stringTest = "i am the very \\ \"model\" of a modern major general";
+
+			stringTest = stringTest.toUpperCase();
+            
+            console.log(stringTest);
+            
+			var indexOfM = stringTest.indexOf("M");
+
+			var start = stringTest.indexOf('"MODEL');
+
+			var end = stringTest.lastIndexOf('MAJOR');
+
+			var subStr = stringTest.substring(start, end);
+
+			console.log(indexOfM);
+			console.log(subStr);
+
+			document.write( "<h1>" + subStr + "</h1>" ); 
+
+		</script>
+
+	</body>
+</html>

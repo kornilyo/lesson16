@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Lato:100,200,300,400');
+        body{
+            background: #61c39a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Lato;
+            font-weight: 200;
+        }
+        h1,h3{margin: 0}
+        button:focus { outline: none; }
+        .calc{
+            margin-top: 100px;
+            width: 500px;
+            box-shadow: 5px 5px 15px #444;
+        }
+        .calc__display{
+            background: white;
+            text-align: right;
+            padding: 15px;
+            font-weight: 100;
+        }
+        .display__op{
+            color: #999;
+            font-size: 26px;
+            border: 1px solid red;
+        }
+        .display__result{
+            color: #333;
+            font-size: 50px;
+            border: 1px solid red;
+        }
+        .calc__op{
+            background: #2fb7d3;
+            color: white;
+            font-size: 30px;
+            list-style-type: none;
+            padding: 10px;
+            margin: 0;
+
+            display: flex;
+            justify-content: space-around;
+        }
+        .op__btn{
+            cursor: pointer;
+            /*background: red;*/
+            flex-basis: 25%;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .calc__numbers{
+            background: #393535;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .numbers__item{
+            flex-basis: 33%;
+            height: 100px;
+            font-size: 30px;
+            background: #333;
+            border:1px solid #333;
+            color:white;
+            cursor: pointer;
+            color: #999;
+            border: none;
+            background: none;
+        }
+        .numbers__item:hover{
+            background: #666;
+            color: white;
+        }
+        .equals{
+            background: #e6f924;
+            color:#272323;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="calc">
+        <div class="calc__display">
+            <h3 class="display__op"></h3>
+            <h1 class="display__result">0</h1>
+        </div>
+        <ul class="calc__op">
+            <li class="op__btn divide" onclick="opClick('/')">/</li>
+            <li class="op__btn multiply" onclick="opClick('*')" >X</li>
+            <li class="op__btn minus" onclick="opClick('-')">-</li>
+            <li class="op__btn plus" onclick="opClick('+')">+</li>
+        </ul>
+        <div class="calc__numbers">
+            <button class="numbers__item one" onclick="numClick(1)">1</button>
+            <button class="numbers__item two" onclick="numClick(2)">2</button>
+            <button class="numbers__item three" onclick="numClick(3)">3</button>
+            <button class="numbers__item four" onclick="numClick(4)">4</button>
+            <button class="numbers__item five" onclick="numClick(5)">5</button>
+            <button class="numbers__item six" onclick="numClick(6)">6</button>
+            <button class="numbers__item seven" onclick="numClick(7)">7</button>
+            <button class="numbers__item eight" onclick="numClick(8)">8</button>
+            <button class="numbers__item nine" onclick="numClick(9)">9</button>
+            <button class="numbers__item dot" onclick="numClick('.')">.</button>
+            <button class="numbers__item zero" onclick="numClick(0)">0</button>
+            <button class="numbers__item equals" onclick="equalClick()">=</button>
+        </div>
+    </div>
+    
+    <script>
+    var displayEl = document.querySelector('.display__op');
+    var displayRE = document.querySelector('.display__result');
+    
+    function numClick(num){
+        console.log('num: ',num);
+        var value1 = displayEl.textContent;
+        displayEl.textContent = value1 + num;
+    }
+    function opClick(oprate){
+        console.log('oprate:' + ' ' + oprate)
+        var multi = displayEl.textContent;
+        displayEl.textContent = multi + oprate;
+    }
+
+    function equalClick (){
+        console.log(eval(displayEl.textContent))
+        displayRE.textContent = eval(displayEl.textContent);
+        displayEl.textContent = displayRE.textContent;
+        // .display__result{
+        // var displayEl = displayEl.textContent;
+        // console.log(displayEl);
+        // var actions = displayEl.textContent.split('');
+        // var actions = eval(displayEl);
+        // console.log(actions);
+    }
+
+    </script>
+</body>
+</html>

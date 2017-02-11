@@ -1,0 +1,98 @@
+<!DOCTYPE html >
+<html lang="en">
+    <head>
+        <title>Flow of Control</title>
+    </head>
+    <body>
+        <script>
+            //Part 1 - If else statement
+
+            var age = 166;
+
+            /*if ( age <= 17 ) {
+                console.log("Underage");
+            } else {
+                console.log("Over 18");
+            }*/
+
+
+            //Part 2 - if elseif if statment
+/*
+            if (age <= 17) {
+                console.log("Underage");
+            }else if (age >=18 && age <=65){
+                console.log("Insurable");
+            }else if(age >=66 && age <=70){
+                console.log("Golden");
+            }else {
+                console.log("out of range");
+            }
+           
+           
+            switch(age){
+                case 17:
+                    console.log("Underage");
+                    break;
+                case 20:
+                    console.log("Insurable");
+                    break;
+                case 60:
+                    console.log("Golden");
+                    break;
+                default:
+                    console.log("out of range"); 
+            }
+            
+*/
+            //Part 3 - if statment using or short circuit
+           /* var value ;///22;
+            
+            value = null;
+
+            console.log(typeof !!value);
+
+            console.log('value of variable "value" is: '+  !!value);
+
+            if(value){
+                console.log('we are alive!!!');
+            }else{
+                console.log('it was not me...');
+            }*/
+            
+            var value = '22';
+
+            if (value === 22){
+                console.log("value is mandatory");
+                console.log(value);
+                console.log(typeof value);
+            }else{
+                console.log('not an integer')
+            }
+
+            //Part 4 - for loops
+            //var counter = 1;
+            
+            /*var i;
+            
+            for (i = 1 ; i <= 10 ; i++ ) {
+                console.log('inside i: '+i);
+            }
+
+            console.log('after loop - i: '+i);*/
+            
+            
+            //Part 5 - while loops
+            /*var counter2 = 2;
+            var loopCount = 0;
+            
+            while (counter2 < 100) {
+                //counter2 = counter2 * counter2;
+                counter2 *= counter2;
+                loopCount++;
+                console.log("total : " +  counter2);
+                console.log("loopCount : " + loopCount);
+            }*/
+
+        </script>
+    </body>
+</html>
